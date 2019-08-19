@@ -1,0 +1,88 @@
+@charset "utf-8";
+/*공통 스타일*/
+*, *::before, *::after{
+  box-sizing: border-box;
+}
+.clearfix::after{
+/* 가상의 박스로 부모길이만큼 처리_overflow보다 속도개선됨 */
+  content: "";
+  /* background: yellow; */
+  display: block;
+  clear: both;
+}
+
+body{
+  margin: 0;
+}
+/*레이아웃*/
+.container{
+
+  /* display: flex; */
+  /* flex-flow: column wrap; */
+  /* flex-wrap: wrap; */
+  justify-content: center;
+}
+.header, .visual, .main, .slogan, .footer{
+  /*반응형 width 영역 포함한 사이즈 가능*/
+  width: 940px;
+  margin-left: auto;
+  margin-right:auto;
+}
+.header{
+background: yellow;
+height: 10vh;
+}
+.visual{
+background: grey;
+height: 10vh;
+
+}
+.main{
+background: orangered;
+padding: 30px 15px;
+min-height: 400px;
+/* overflow 자식길이를 읽어들인다음 다시 적용하여 속도가 느려짐 */
+/* overflow: hidden; */
+/* height: 60vh; */
+/* 공백 30px 균등하게 */
+/* display: flex;
+justify-content: space-between; */
+}
+
+.group{
+  margin: 0 15px;
+  float: left;
+}
+
+.group1{
+background: pink;
+width: 250px;
+}
+.group2{
+/* clear: float와 겹치지 않도록 강제로 margin을 줌 */
+  /* clear: both; */
+  background: skyblue;
+  /* height: 100px; */
+  width: 380px;
+/* order: -1; */
+}
+.group3{
+  background: lime;
+  /* float: left; */
+  width: 190px;
+}
+.slogan{
+background: purple;
+height: 10vh;
+}
+.footer-bg{
+background: silver;
+/* flex-basis: 100%;
+display: flex;
+justify-content: center; */
+}
+.footer{
+background: yellow;
+height: 10vh;
+}
+
