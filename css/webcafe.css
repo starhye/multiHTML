@@ -1,8 +1,32 @@
 @charset "utf-8";
+@import url("https://spoqa.github.io/spoqa-han-sans/css/SpoqaHanSans-kr.css");
+@import url("./normalize.css");
+@import url("./reset.css");
+/* 숨긴 콘텐츠 */
+.a11y-hidden{
+  /* background: red; */
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  margin: -1px;
+  overflow:hidden;
+  clip: rect(0,0,0,0);
+  clip-path: inset(0,0);
+}
 /*공통 스타일*/
 *, *::before, *::after{
   box-sizing: border-box;
+  font-family: 'Spoqa Han Sans', 'Sans-serif';
 }
+/* 링크스타일 */
+a{
+  color: inherit;
+  text-decoration: none;
+}
+a:hover, a:focus{
+  color: #f00;
+}
+/* 플로트 이슈를 해결하기 위한  css 선언 */
 .clearfix::after{
 /* 가상의 박스로 부모길이만큼 처리_overflow보다 속도개선됨 */
   content: "";
@@ -10,33 +34,103 @@
   display: block;
   clear: both;
 }
+/* ul
+  {background: grey;
+  } */
+/* ul ul
+  {background: red;} */
 
+html{
+  font-size: 10px;
+}
 body{
   margin: 0;
+  font-weight: 400;
+  /* spoqa han sans 700, 300, 400, 100 중 font weight선택 */
+  color: #181818;
+  font-size: 1.4rem;
+
 }
+
 /*레이아웃*/
 .container{
-
+  background: url("./images/bg_flower.png")no-repeat 50% 0,
+  linear-gradient(to bottom,#999 0%, #ccc 40%, #eee 60%, #fff 100%);
   /* display: flex; */
   /* flex-flow: column wrap; */
   /* flex-wrap: wrap; */
-  justify-content: center;
+  /* justify-content: center; */
+
 }
 .header, .visual, .main, .slogan, .footer{
   /*반응형 width 영역 포함한 사이즈 가능*/
   width: 940px;
+  /* align-self: center; */
   margin-left: auto;
   margin-right:auto;
 }
+/* 헤더 */
 .header{
-background: yellow;
-height: 10vh;
+  background: #fff;
+  position: relative;
+  padding: 0 30px;
+  border-radius: 0 0 15px 15px;
+/* height: 10vh; */
 }
-.visual{
-background: grey;
-height: 10vh;
 
+/* 로고 */
+.logo{
+  background: teal;
+  position: absolute;
+  /* absolute는 자기보다 상위기준으로 위치(relative, absolute, fixed되나 static이면 무시됨 */
+  top: 47px;
+  left: 65px;
 }
+
+/* 멤버 링크 모음 */
+.member{
+
+  padding: 2px 0;
+  text-align: right;
+  font-size: 0;
+  margin-right: -10px;
+}
+.member li, .member a{
+  display: inline-block; 
+}
+
+.member li{
+  font-size: 1.4rem;
+
+  /* width: 80px; */
+}
+.bar::before{
+  content: ":";
+}
+.member a{
+  padding: 8px 10px;
+  text-transform: uppercase;
+  /* 소문자 대문자로 변환 */
+}
+/* 메인 메뉴 */
+.menu{
+  /* background: orange;
+  background-image: linear-gradient(to bottom, red, green); */
+  background: #d85922 linear-gradient(to bottom, #ed962d 0%,#d85922 33%,#d85922 69%,#ed962d 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */;
+  height: 47px;
+  border-radius: 0 0 15px 15px;
+  /* border-top: 2px solid #000; */
+  box-shadow: 0 -2px 0 0 #000;
+}
+.navigation{
+  padding-bottom: 50px;
+}
+
+
+.visual{
+height: 120px;
+}
+
 .main{
 background: orangered;
 padding: 30px 15px;
