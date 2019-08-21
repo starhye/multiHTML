@@ -323,7 +323,8 @@ width: 250px;
 .login-form input{
   height: 22px;
   width: 90px;
-  border:1px; 
+  border:1px solid #aaa;
+  padding: 1px 1px 1px 5px; 
 }
 
 .login-form fieldset{
@@ -334,7 +335,7 @@ width: 250px;
 .btn-login{
   padding: 0;
   position: absolute;
-  background: orange;
+  background: #e2622b;
   color: #fff;
   top:0;
   right:0;
@@ -355,7 +356,7 @@ width: 250px;
 .sign li::before{
   margin-right: 0;
   margin-left: 0;
-  color: #ed962d;
+  color: #e2622b;
 }
 
 .slogan{
