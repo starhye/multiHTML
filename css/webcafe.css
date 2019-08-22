@@ -359,6 +359,252 @@ width: 250px;
   color: #e2622b;
 }
 
+/* 유효성 검사 배너 */
+.validation{
+  margin-top: 25px;
+
+}
+.validation li{
+  margin-bottom: 10px;
+}
+.validation a{
+  display: block;
+  background:url("./images/validation_icon.png") no-repeat 20px 50%, #ccc linear-gradient( #ccc, #eee);
+  border: 1px solid #aaa;
+  border-radius: 17px;
+  padding: 6px 0 6px 45px;
+}
+/* 박스 전체가 링크되도록 하려면 a에서 해야함 */
+
+/* .validation li{
+background-image: url("./images/validation_icon.png");
+background-repeat: no-repeat;
+background-position: 5px 5px, 0, 30px;
+background: linear-gradient(circle at right top, #999, #ccc);
+border: 1px solid #181818;
+border-radius: 15px;
+margin: 25px 0 0;
+padding: 5px 5px 5px 5px
+} */
+
+/* 웹 관련 용어 */
+.term{
+  background:#ccc linear-gradient( #ccc, #eee);
+  margin-top: 20px;
+  border:  1px solid #aaa;
+  border-radius: 5px;
+  padding: 10px 15px;
+}
+/* .term-heading{
+  font-weight: 700;
+  font-size: 1.6rem;
+  font-style: normal;
+  margin: 0 15px 10px;
+}
+.term-list-subject{
+  /* background: yellow; */
+  /* margin: 0 80px;
+}
+.term-list-thumbnail{
+  margin: 0 15px ;
+  float: left;
+}
+.term-list-brief{
+  /* background: pink; */
+  /* width: 150px;
+  margin: 10px 80px 5px;
+  text-decoration-style: #296897;
+} */
+.term-list .odd, .term-list .even{
+  margin-top: 10px;
+}
+.term-heading{
+  font-weight: 700;
+  font-size: 1.6rem;
+}
+.term-list-subject, .term-list-brief{
+  float: right;
+  width: 145px;
+}
+
+.term-list-subject{
+  color: #296897;
+  margin-top: -5px;
+}
+.term-list-thumbnail{
+  float: left;
+}
+.term-list-thumbnail img{
+  vertical-align: top;
+/* 아래 공백 없앰 */
+}
+.term-list-brief{
+  /* padding-left: 76px; */
+  line-height: 1.5;
+}
+
+
+/* 클래스명 오타로 인해 레이아웃이 무너졌음 
+.even .term-lest-subject, .even .term-list-brief{
+  float: left;
+} */
+/* .even .term-list-subject, .even .term-list-brief{
+  float: left;
+}
+.even .term-list-thumbnail{
+  float: right;
+} */
+
+/* 검색 폼 */
+.search{
+  background:#ccc linear-gradient( #ccc, #eee);
+  border:  1px solid #aaa;
+  border-bottom-color: #fff;
+  border-radius: 15px 15px 0 0;
+  padding: 15px 25px 10px;
+}
+/* .search-form fieldset{
+  display: flex;
+  justify-content: space-between;
+} */
+/* 크롬에서   fieldset인식못함 */
+
+.search-form input{
+  width: 200px;
+  height: 24px;
+  border: 1px solid #aaa;
+  border-radius:  3px;
+  padding: 1px 1px 1px 5px;
+}
+.btn-search{
+  border:1px solid #aaa;
+  border-radius: 3px;
+  height: 24px;
+  padding: 0 12px;
+  color: #fff;
+  background: #222;
+  font-size: 1.3rem;
+  vertical-align: top;
+}
+
+/* .search{
+  background:#ccc linear-gradient( #ccc, #eee);
+  border:  1px solid #aaa;
+  border-top-right-radius: 10px;
+  border-top-left-radius: 10px;
+  display: flex;
+  padding: 10px 20px;
+}
+.search-form li{
+  width: 150px;
+  height: 22px;
+} */
+
+
+
+/* 공지사항 및 자료실 */
+[class$="more"]::before{
+  color: hsla(110, 50%, 30%, 1);
+}
+.board ul, .board [class$="more"]{
+  display: none;
+}
+.board-act ul, .board-act  [class$="more"]{
+  display: block;
+}
+.board{
+  margin-top: 20px;
+  position: relative;
+}
+.tab{
+  position: absolute;
+  top: 0;
+  /* relative 있는데를 기준으로 왼쪽, 위0에 위치 */
+  background: #ccc linear-gradient(#ccc, #eee);
+  border: 1px solid #aaa;
+  border-radius: 5px 5px 0 0;
+  color: #333;
+  padding: 5px 10px;
+  cursor: pointer;
+}
+.board-act .tab{
+color: #e2622b;
+background: #fff;
+border-color: #e2622b #e2622b #fff #e2622b;
+}
+.notice-heading{
+  left: 0;
+}
+.pds-heading{
+left: 73px;
+}
+.board ul a{
+  width: 260px;
+  display: block;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  /* nowrap 글 길이를 넓이만큼 줄임 */
+  /* overflow hidden 길이만큼 잘림 */
+  /* text-overflow ...으로 자연스럽게 자름 */
+  /* 세개를 세트로 써야됨 */
+}
+.board li{
+  margin: 7px;
+  position: relative;
+}
+.board ul{
+  padding-top: 45px;
+}
+.board ul time{
+  position: absolute;
+  top: 0;
+  right: 0;
+}
+.board [class$="more"]{
+  position: absolute;
+  top: 0;
+  right: 0;
+
+}
+/* .board{
+  background: yellow;
+  margin-top: 20px;
+}
+.board-act {}
+
+.notice{
+  background: pink;
+}
+.pds{
+  background: skyblue;
+}
+.tab{
+  background: lime;
+  background:#ccc linear-gradient( #ccc, #eee);
+  border:  1px solid #aaa;
+  border-bottom-color: #fff;
+  border-radius: 10px 10px 0 0;
+  padding:5px 10px;
+  width: 80px;
+}
+.board-act ul{
+  background: orange;
+  display: none;
+  position: absolute;
+}
+.board-act [class$="more"]{
+background: silver;
+float: right;
+padding:5px 0;
+display: none;
+position: absolute;
+} */
+
+/* 새소식 */
+
+
+
 .slogan{
 background: purple;
 height: 10vh;
