@@ -20,8 +20,7 @@
   font-family: 'Spoqa Han Sans', 'Sans-serif';
 }
 /* 링크스타일 */
-a{
-  color: inherit;
+a{  color: inherit;
   text-decoration: none;
 }
 a:hover, a:focus{
@@ -50,7 +49,6 @@ body{
   /* spoqa han sans 700, 300, 400, 100 중 font weight선택 */
   color: #181818;
   font-size: 1.4rem;
-
 }
 
 /*레이아웃*/
@@ -602,21 +600,492 @@ position: absolute;
 } */
 
 /* 새소식 */
-
-
-
-.slogan{
-background: purple;
-height: 10vh;
+/* .news{
+  background: yellow;
+  margin-top: 20px;
+  position: relative;
 }
+
+.news-heading{
+  background: lime;
+}
+
+.news-link{
+  background: pink;
+  display: block;
+  position: absolute;
+  right: 0;
+  top: 20px;
+}
+
+.news-more{
+  background: orange;
+  position: absolute;
+  float: right;
+  right: 0;
+  top: 0;
+}
+
+.news-item{
+  background: skyblue;
+  position: absolute
+  right: 0;
+}
+
+.news-subject{
+  background: tomato;
+}
+
+.news-date{
+  background: teal;
+  position: absolute;
+  float: right;
+  right: 0;
+}
+
+.newsbrief{
+  background: hotpink;
+  position: absolute;
+  right: 0;
+}
+
+.news-thumbnail{
+  background: olive;
+  float: left;
+} */
+
+
+/* 새소식 */
+.news{
+  margin-top: 20px;
+  position: relative;
+}
+
+.news::before{
+  content:"";
+  background:linear-gradient(to right, #ccc, #fff);
+  position: absolute;
+  top: 35px;
+  left: 0;
+  width: 80%;
+  height: 1px;
+}
+
+.news-heading{
+  font-weight: 700;
+  font-style: 1.5rem;
+  color: #e2622b;
+}
+
+.news-link{
+  display: block;
+}
+
+.news-more{
+  position: absolute;
+  top: 0;
+  right: 0;
+}
+
+.news-item{
+  margin-top: 35px;
+  padding-left: 130px;
+  /* 안쪽여백 */
+  position: relative;
+  min-height: 130px;
+}
+
+.news-subject{
+  font-weight: 700;
+}
+
+.news-date{
+  display: block;
+  margin: 10px 0;
+}
+
+.news-brief{
+  line-height: 1.5;
+}
+
+.news-thumbnail{
+  position: absolute;
+  top: 4px;
+  left: 0;
+  text-align: center;
+}
+.news-thumbnail img{
+  margin-bottom: 15px;
+  box-shadow: 0 15px 15px 5px rgba(0,0,0,0.5)
+}
+
+/* 신규이벤트 및 관련사이트 */
+.event-related{
+  background:linear-gradient(#ccc, #eee);
+  border: 1px solid #aaa;
+  border-radius: 5px;
+  padding: 10px;
+}
+
+.event{
+  position: relative;
+}
+.event-heading, .related-heading, .favorite-heading{
+  font-size: 1.6rem;
+  font-weight: 700;
+}
+.event-heading span, .related-heading span, .favorite-heading span{
+  color: #e2622b;
+  font-size: 1.6rem;
+  font-weight: 700;
+}
+/* .event-detail {
+} */
+.event-thumbnail, .event-brief{
+  margin-top: 10px;
+}
+.event-thumbnail img{
+  border: 1px solid #aaa;
+  box-shadow: 5px 5px 0 0 #999;
+}
+
+.btn-event{
+  position: absolute;
+  right: 0;
+  top: 0;
+}
+.btn-event-prev, .btn-event-next{
+  width: 19px;
+  height: 18px;
+  border: 0;
+  padding: 0;
+  background: url("./images/back_forward.png") no-repeat;
+}
+.btn-event-next{
+  background-position: -36px 0;
+}
+
+.related{
+margin-top: 10px;
+border-top: 1px solid #aaa;
+padding-top: 10px;
+}
+
+.related-list{
+background: #fff;
+margin-top: 10px;
+border: 1px solid #aaa;
+border-radius: 3px;
+height: 25px;
+overflow: hidden;
+transition-property: all;
+transition-duration: 0.4s;
+}
+.related-list:hover, .related-list:focus{
+  height: 147px;
+  padding: 10px 0;
+  /* transition-duration: 3s; */
+}
+/* hover 상황을 체인지 , 마우스 올리면 길이 늘어남 */
+
+
+.related-list li{
+line-height: 25px;
+text-indent: 1.5em;
+/* 글자만큼 여백 첫줄 들여쓰기 효과 */
+}
+
+.related-list a{
+  display: block;
+}
+
+/* .event-related{
+  background: yellow;
+}
+
+.event{
+  background: pink;
+}
+.event-heading{
+  font-size: 1.6rem;
+  font-weight: 700;
+  margin: 0 5px;
+}
+.event-heading span{
+  color: #d85922;
+}
+.event-detail {
+  position: absolute;
+  text-align: center;
+  margin: 5px;
+}
+.event-thumbnail{
+  margin: 5px 0 0 10px;
+}
+.event-brief{
+  margin: 5px;
+  text-align: center;
+}
+.related::before{
+  content:"";
+  background:linear-gradient(to right, #ccc, #fff);
+  position: absolute;
+  top: -10px;
+  left: 0;
+  width: 80%;
+  height: 1px;
+}
+
+.related{
+  border: 1px #ccc;
+  position: relative;
+}
+.related-heading{
+  font-size: 1.6rem;
+  font-weight: 700;
+  margin: 0 5px;
+}
+.related-heading span{
+  color: #d85922;
+}
+.related-list{
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  min-height: 15px;
+} */
+
+/* 인기 사이트 */
+.favorite{
+  background:linear-gradient(#ccc, #eee);
+  border: 1px solid #aaa;
+  border-radius: 5px;
+  padding: 10px;
+  margin-top: 20px;
+  position: relative;
+}
+.favorite-list li{
+  margin-top: 5px;
+  display: flex;
+  /* justify-content: space-between;
+  align-items: center; */
+  align-items: center;
+  counter-increment: number;
+}
+.favorite-list li::before{
+  content:counter(number);
+  color: #fff;
+  background: #aaa;
+  border-radius: 3px;
+  padding: 0 6px;
+  font-size: 1.2rem;
+  margin-right: 5px;
+}
+
+.favorite-list{
+  margin-top: 5px;
+  overflow: hidden;
+}
+.favorite-list em{
+  margin-left: auto;
+  background-image: url("./images/rank.png");
+  background-repeat: no-repeat;
+  margin-top: 5px;
+  width: 9px;
+  height: 11px;
+  padding-top: 11px;
+  overflow: hidden;
+  /* padding과 overflow hidden  같이 씀 */
+}
+
+.up{
+  background-position: 0 0;
+}
+.stop{
+  background-position: 0 50%;
+}
+.down{
+  background-position: 0 100%; 
+}
+
+.favorite-more{
+  position: absolute;
+  top: 10px;
+  right: 10px;
+}
+/* .no1::before, .no2::before, .no3::before, .no4::before{
+  background: pink;
+  box-lines: 1px;
+}
+.favorite-list li{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.favorite-list a{
+  border: 0;
+  padding: 0;
+  overflow: hidden;
+}
+
+.up, .stop, .down{
+  width: 9px;
+  height: 11px;
+  border: 0;
+  padding: 0;
+  background: url("./images/rank.png") no-repeat;
+}
+
+.stop{
+  background-position: 0 -20px;
+}
+
+.down{
+  background-position: 0 -45px;
+}
+
+
+.up em, .stop em, .down em{
+  overflow: hidden;
+}
+
+.favorite-list{
+  background: yellow;
+  margin-top: 10px;
+  overflow: hidden;
+}
+
+.favorite-more{
+  position: absolute;
+  top: 10px;
+  right: 10px;
+} */
+
+
+/* 슬로건 */
+.slogan{
+  position: relative;
+  padding: 10px 100px 10px 180px;
+  }
+  
+  .slogan-heading{
+    position: absolute;
+    /* padding-top:  83px;
+    overflow: hidden; */
+    width: 110px;
+    height: 83px;
+    left: 50px;
+    bottom: -25px;
+    text-align: center;
+    line-height: 83px;
+  }
+  .slogan-heading::after{
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: url("./images/coffee.png") no-repeat;
+  }
+  .slogan-content{
+    color: #a09784;
+    line-height: 1.3;
+  }
+  .slogan-content q::before{
+    font-size: 3.5rem;
+    position: relative;
+    top: 12px;
+  }
+  .slogan-content q::after{
+    content: "";
+  }
+  
+
+
+/* .slogan{
+background: yellow;
+color: #a09784;
+position: relative;
+}
+
+.slogan-heading{
+  position: absolute;
+  background: pink;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: url("./images/coffee.png") no-repeat;
+}
+
+.slogan-content{
+  padding: 0 100px 10px 150px;
+} */
+
+/* 푸터 */
 .footer-bg{
-background: silver;
+background:  #ccc linear-gradient(to bottom,#999 0%, #ccc 40%, #eee 60%, #fff 100%);
 /* flex-basis: 100%;
 display: flex;
 justify-content: center; */
 }
 .footer{
-background: yellow;
-height: 10vh;
+  position: relative;
+  padding: 15px 100px 10px 180px;
 }
 
+.footer-logo{
+  position: absolute;
+  top: 40px;
+  left: 50px;
+}
+.guide-list{
+  background:#7b8385;
+  color: #fff;
+  display: flex;
+  justify-content: space-around;
+  border-radius: 30px;
+  padding: 2px 15px;
+}
+.guide-list a{
+  display: block;
+  padding: 8px 0;
+  text-transform: uppercase;
+  /* 대문자 */
+}
+.address, .copyright{
+  display: block;
+  margin: 5px 0;
+}
+.badge{
+  position: absolute;
+  top: 15px;
+  right: 0px;
+}
+
+
+/* .footer{
+  position: relative;
+}
+
+.footer-logo{
+  position: absolute;
+}
+.guide-list{
+  position: absolute;
+  background:#7b8385;
+  color: #fff;
+  border-radius: 10px;
+  display: flex;
+  padding: 10px 100px 10px 100px;
+  text-align: center;
+  justify-content: space-evenly;
+}
+.address {
+  background: lime;
+  display: left;
+  margin-top: 30px;
+}
+.badge{
+  
+} */

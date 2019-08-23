@@ -1,0 +1,280 @@
+
+https://github.com/seulbinim/Intro/blob/master/README/preferences.md
+Web Developer tota11y openwax 확장프로그램 설치
+웹 브라우저 확장 프로그램
+Web Developer
+HeadingsMap
+OpenWAX
+ColorZilla
+WhatFont
+Viewport Resizer
+
+$ git config --global user.name "John Doe"
+$ git config --global user.email johndoe@example.com
+git clone https://github.com/seulbinim/exHTML5.git
+cd exHTML5
+rm -rf .git (숨김파일 지움)
+mv exHTML5 multiHTML
+
+https://github.com/seulbinim/pdf
+
+https://www.w3.org/Style/CSS/
+
+https://css3test.com/   css3지원 test 점수
+
+생활코딩 > 클라이언트
+
+html 구조설계 선형화
+
+3단, 4단(네비게이션) 선형화로 구조설계
+1.콘텐츠 논리적인 순서 결정
+헤더 ->네비게이션 ->(비주얼, 광고) ->콘텐츠 ->(슬로건)->퓨터
+
+2. 시맨틱(의미가 있는) 마크업
+기계도 알 수 있도록 태그 정의를 해야함 
+과거 그룹핑만했던것을 (div 로)
+html5 부터 헤드태그명령어를 줄 수 있음
+div -> header
+div -> div
+div ->main
+div ->article (독립적인 콘텐츠)
+div ->footer
+
+*WAI-ARIR (RIR에서 만듦) html5 로 다시 정의하기 어려운 경우
+ W3C의 다른환경에서도 접근가능하도록 함 (표준화) 
+-ROLE 속성을 이용하여 헤드, 퓨터등을 정의할 수 있음
+<body>
+ 헤더 role="banner"
+role="navigation"
+퓨터 role="contentinfo"
+
+
+*id -> #
+*class -> .
+
+<body>header <section>header 가능
+콘텐츠 의미 부여할 수 있도록  section1 section2로 쓰는거는 안좋음
+div -> header.header
+div -> div.visual
+div ->main.main <body>하나만 가능
+div ->article.slogan (독립적인 콘텐츠)
+div ->div.footer-bg (footer body 풀로채우는 회색배경)
+div ->footer.footer
+
+
+<네이밍 방법론> * 규칙 통일하는게 좋음
+pascal case Main Content
+carmel case main Content
+cebab case main-content
+snake case main_content
+
+Block Element Modifier
+Element
+element는 block 안에서 특정 기능을 수행하는 컴포넌트이다. element는 상황에 따라 달라진다.
+각 element는 두 개의 밑줄표시로 연결하여 block 다음에 작성한다.
+.header__loge
+
+Modifier 외관 상태 설명
+Modifier은 block 또는 element의 속성이다
+이 속성은 block 또는 element의 외관이나 상태를 변화시킨다
+Class명은 “–“를 추가하여 modifier 추가
+.block__element--modifier
+
+<!DOCTYPE html>html5 쓰겠다고 선언
+<html lang="ko-KR">
+<head>
+  <meta charset="UTF-8">인코딩 선언 , head바로 밑에 와야 한글이 안깨짐
+<title>Document</title> 웹사이트 대표하는 타이틀로 선언, 장식문자 넣지말것, 검색엔진에서 쓰임
+
+
+main.main+air
+div.footer-bg>footer.footer
+<DOM Tree>
+document of 
+표준
+
+
+<main 화면 레이아웃>
+총 10개 배치 : 배치를 위한 그룹핑 div
+div.group.g1
+div.group.g2
+div.group.g3
+
+class="group g1"
+div.group.group$*3{그룹$}
+-> <div class="group group1">그룹1</div>
+    <div class="group group2">그룹2</div>
+    <div class="group group3">그룹3</div>
+
+
+------------------------------------------------------------------------------------------
+<CSS 레이아웃>
+-float        -display:flex       -grid
+ie6~9        ie10,11             배치 더 자유롭게 해줌
+  margin-left: auto;
+  margin-right:auto;
+html 구조 ->css 배치도
+*  box sizing : 1. content-box
+                   2. boder-box
+
+/*레이아웃*/ 주석 단축키
+@charset "utf-8";
+
+/*레이아웃*/
+.header{
+background: yellow;
+}
+.visual{
+background: grey;
+}
+.main{
+background: orangered;
+}
+.group1{
+background: pink;
+}
+.group2{
+background: skyblue;
+}
+.group3{
+background: lime;
+}
+.slogan{
+background: purple;
+}
+.footer-bg{
+background: silver;
+}
+.footer{
+background: yellow;
+}
+
+crtl+s저장
+  text-align: center;
+텍스트 가운데
+alt 키 누룬상태에서 명령어 이동가능
+ctrl + / 주석
+
+*블록 -> 보기 ->명령팔레트 -> emmet ->  약어로 래핑 
+div.container
+ <div class="container"> 
+    <header class="header">헤더</header>
+    <div class="visual">비주얼</div>
+    <main class="main">
+      <div class="group group1">그룹1</div>
+      <div class="group group2">그룹2</div>
+      <div class="group group3">그룹3</div>
+    </main>
+    <article class="slogan">슬로건</article>
+    <div class="footer-bg">
+      <footer class="footer">퓨터</footer>
+    </div>
+  </div>
+*블록 -> 보기 ->명령팔레트 -> emmet -> 개별줄 약어로 래핑
+
+.container{
+  display: flex;
+횡방향으로 배열(옆으로)
+  flex-direction: column;
+순방향으로 배열(세로로)
+column 일 경우 세로가 기본축으로 됨 
+교차축이 세로가 됨 
+ align-items: center; 
+박스가 가운데로 정렬됨
+.container{
+  display: flex;
+  flex-wrap: wrap;
+줄바꿈
+
+*float
+clear
+
+<git 저장방법>
+보기 > 터미널가기
+$ git init
+Initialized empty Git repository in C:/Users/student/multiHTML/.git/
+message에 상세설명 추가
+
+
+git에 설정한 저장 폴더에 저장
+$ git remote add origin https://github.com/starhye/multiHTML.git
+
+<헤더 header>
+1.  논리적인 순서
+표로 병합하여 만들경우, 순서가 왼쪽에서 오른쪽으로 이동하여 뒤로 백하는 비합리적인 순서가 생김
+ 가. 로고 (대표)
+ 나. 메뉴 (네비게이션)
+ 다. 텍스트 링크 
+
+2.시맨틱 마크업
+.header
+h1.loge (webcafe 로고)
+기능까지 생각하여 설계 
+하이퍼링크 기능
+li.(list 독립적인 개체 의미)
+ul.member(목록을 묶음)
+ol (형태로 묶음, 순서가 중요함 o 1)
+dl (정의로묶음)
+span (인라인으로 묶음)
+
+nav.navigation
+h2.
+(히든콘텐츠:실제로 보이지 않는 메뉴, 스크린리더에서 읽힘) 메인메뉴
+display:none 하면 읽히지도 보이지도 않음
+<li class="menu-item menu-act" tabindex="0">
+                <!-- menu-act 동적디자인, 마우스오버기능, 스크립트 이동에 따라 이동함 -->
+
+
+
+네거티브 마진
+  margin: -1px;
+좌우위아래 1px씩 마진생김
+
+  clip: rect(0,0,0,0);
+잘라냄
+
+  box-shadow: 0 0 5px 1px #000;
+주변에 음영효과
+
+  /* border-top: 2px solid #000; */
+  box-shadow: 0 -2px 0 0 #000;
+상단 검은색 줄
+
+키보드 포커스   form 관련
+button, input, textarea
+tapindex :키보드 네비게이션 기능
+
+
+accessibility - > a11y
+접근성과 연관이 있는 콘텐츠명
+readable-hidden
+
+
+*대체 텍스트 (alt)
+ 이미지(내용)을 대체 텍스트로 제공
+h1.logo>a>img
+ <h1 class="logo"><a href=""><img src="" alt=""></a></h1>
+박스모델이 됨
+
+
+명령파레트 >  emmet 약어로 개별로 래핑
+ul.member>li*>a[href="#"]
+
+명령파레트 -문서서식 - 들여쓰기 맞춰주는 scatter 선택
+
+*css reset
+  line-height: 1; /* 1 글자간격100%*/
+
+html{
+  font-size: 10px;
+body{
+  font-size: 1.4rem;
+(rem  root 에서 1.4배)
+(em 상속받은것에서 ~배)
+
+-이미지 최적화 웹용으로 작업해야함
+
+
+
+---------------------------------------------------------------------------------------------------------
+
